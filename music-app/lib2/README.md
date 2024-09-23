@@ -23,7 +23,7 @@ This is a album application that manages an artists albums. It stores everything
 2. Install dependencies
     - pip install -r requirements.txt
 ## Usage
-Run the application using : python.cli.py
+Run the application
 ## License
 This project is licensed under the MIT License.
 ## Summary

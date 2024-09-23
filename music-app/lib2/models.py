@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from database import engine, Session
+from sqlalchemy.orm import joinedload
 
 Base = declarative_base()
 
@@ -86,6 +87,6 @@ def list_artists():
 
 def list_albums():
     session = Session()
-    albums = session.query(Album).all()
+    albums = session.query(Album).options(joinedload(Album.artist), joinedload(Album.genre)).all()
     session.close()
     return albums
